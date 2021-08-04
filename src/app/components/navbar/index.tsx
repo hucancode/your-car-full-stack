@@ -15,6 +15,8 @@ const Container = styled.div`
         items-center
         lg:pl-12
         lg:pr-12
+        pl-3
+        pr-3
         justify-between
     `}
 `;
