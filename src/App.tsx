@@ -1,13 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
+import styled from 'styled-components';
+import tw from 'twin.macro';
 import './App.css';
+import { HomePage } from './app/containers/homepage';
 
+const AppContainer = styled.div`
+  ${tw`
+    w-full
+    h-full
+    flex
+    flex-col
+  `}
+`;
 function App() {
-  return (
-    <div className="App">
-      Hello world
-    </div>
-  );
+  return <AppContainer>
+    <HomePage/>
+  </AppContainer>;
 }
 
 export default App;
