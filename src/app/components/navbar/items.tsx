@@ -1,5 +1,5 @@
 import React from "react";
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import tw from "twin.macro";
 import {useMediaQuery} from 'react-responsive';
 import { SCREENS } from "../responsive";
@@ -13,20 +13,28 @@ const ListContainer = styled.ul`
     `};
 `;
 
-const NavItem = styled.li`
+const NavItem = styled.li<{mobile?: any}>`
     ${tw`
-        text-xs
-        md:text-base
+        text-xl
         text-black
         font-medium
-        mr-1
+        mr-3
         md:mr-5
         cursor-pointer
         transition
         duration-300
         ease-in-out
-        hover:text-gray-700
+        hover:text-gray-500
     `};
+    ${({mobile}) => mobile && css`
+        ${tw`
+            text-white
+            mb-3
+            focus:text-gray-300
+            hover:text-gray-300
+        `}
+    `
+    };
 `;
 
 export function NavItems() {
@@ -35,16 +43,16 @@ export function NavItems() {
     {
         return <Menu right styles={menuStyles}>
             <ListContainer>
-                <NavItem>
+                <NavItem mobile>
                     <a href='#'>Home</a>
                 </NavItem>
-                <NavItem>
+                <NavItem mobile>
                     <a href='#'>Cars</a>
                 </NavItem>
-                <NavItem>
+                <NavItem mobile>
                     <a href='#'>Services</a>
                 </NavItem>
-                <NavItem>
+                <NavItem mobile>
                     <a href='#'>Contact Us</a>
                 </NavItem>
             </ListContainer>
