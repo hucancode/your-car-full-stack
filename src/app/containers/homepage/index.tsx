@@ -7,6 +7,7 @@ import { Marginer } from "../../components/marginer";
 import { TopSection } from "./topSection";
 import { BookingSteps } from "./bookingSteps";
 import { AboutUs } from "./aboutUs";
+import { TopCars } from "./topCars";
 
 const Container = styled.div`
     ${tw`
@@ -28,5 +29,7 @@ export function HomePage() {
         <BookingSteps />
         <Marginer direction="vertical" margin="4em" />
         <AboutUs/>
+        <Marginer direction="vertical" margin="4em" />
+        <TopCars/>
     </Container>
 }
