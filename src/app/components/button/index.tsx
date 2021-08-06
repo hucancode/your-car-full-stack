@@ -17,7 +17,7 @@ const BaseButton = styled.button`
         rounded-md
         text-white
         text-xs
-        font-semibold
+        md:font-semibold
         border-transparent
         border-2
         border-solid
@@ -29,7 +29,7 @@ const BaseButton = styled.button`
     `};
 `;
 
-const OutlinedButton = styled(BaseButton)`
+const FilledButton = styled(BaseButton)`
     ${tw`
         bg-red-500
         hover:bg-transparent
@@ -38,7 +38,7 @@ const OutlinedButton = styled(BaseButton)`
     `};
 `;
 
-const FilledButton = styled(BaseButton)`
+const OutlinedButton = styled(BaseButton)`
     ${tw`
         border-red-500
         text-red-500
@@ -50,7 +50,7 @@ const FilledButton = styled(BaseButton)`
 `;
 
 export function Button(props: IButtonProps) {
-    if(props.theme === "filled")
+    if(props.theme === 'filled')
     {
         return <FilledButton>{props.text}</FilledButton>
     }

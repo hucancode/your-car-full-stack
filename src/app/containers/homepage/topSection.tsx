@@ -3,6 +3,7 @@ import styled from "styled-components";
 import tw from "twin.macro";
 import CarBg from '../../../assets/images/blob.svg'
 import CarImg from '../../../assets/images/mclaren-orange.png'
+import { Button } from "../../components/button";
 import { SCREENS } from "../../components/responsive";
 
 const TopContainer = styled.div`
@@ -133,6 +134,14 @@ const StandaloneCar = styled.div`
     }
 `;
 
+const ButtonContainer = styled.div`
+    ${tw`
+        flex
+        flex-wrap
+        mt-5
+    `}
+`;
+
 export function TopSection() {
     return <TopContainer>
         <LeftContainer>
@@ -141,6 +150,10 @@ export function TopSection() {
             My mother always used to say: The older you get, the better you get, unless you’re a banana. 
             That's why you should have faith in our service. I know this is not the best description you can get for a car service, but whatever.
             </Description>
+            <ButtonContainer>
+                <Button text="Rent a Car"/>
+                <Button text="Lend a Car"/>
+            </ButtonContainer>
         </LeftContainer>
         <RightContainer>
             <CarBackgroundContainer>
