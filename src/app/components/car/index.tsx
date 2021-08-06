@@ -11,9 +11,9 @@ interface ICarProps extends ICar {
 
 const Container = styled.div`
     box-shadow: 0 1.3px 17px -2px rgba(0,0,0,0.4);
-    width: 16em;
-    min-height: 23em;
-    max-height: 23em;
+    width: 20em;
+    min-height: 26em;
+    max-height: 26em;
     ${tw`
         flex
         flex-col
@@ -22,7 +22,7 @@ const Container = styled.div`
         pb-4
         bg-white
         rounded-md
-        m-1
+        m-3
         sm:m-3
         md:m-6
     `}

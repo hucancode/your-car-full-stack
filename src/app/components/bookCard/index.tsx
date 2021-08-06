@@ -24,6 +24,8 @@ const CardContainer = styled.div`
         pb-1
         pr-2
         pl-2
+        ml-3
+        mr-3
         md:pt-2
         md:pb-2
         md:pr-6
@@ -143,7 +145,7 @@ export function BookCard() {
             <DateCalendar value={returnDate} onChange={setReturnDate as any} offset={4} />
         }
         <LineSeperator />
-        <Marginer direction='horizontal' margin='2em' />
+        {/* <Marginer direction='horizontal' margin='2em' /> */}
         <Button theme='filled' text='Book Your Ride'/>
     </CardContainer>
 }

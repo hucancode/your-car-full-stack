@@ -6,7 +6,7 @@ import { ICar } from "../../model/car";
 
 const Container = styled.div`
     ${tw`
-        max-w-screen-lg
+        max-w-screen-xl
         w-full
         flex
         flex-col
