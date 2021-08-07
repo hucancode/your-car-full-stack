@@ -20,7 +20,7 @@ const LogoText = styled.div`
         font-bold
         m-1
     `};
-    ${({theme}: any) => (theme === 'light'? tw`text-black` : tw`text-white`)}
+    ${({theme}: any) => (theme === 'dark'? tw`text-white` : tw`text-black`)}
 `;
 const Image = styled.div`
     width: auto;
