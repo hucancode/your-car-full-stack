@@ -37,7 +37,6 @@ const ItemContainer = styled.div`
     ${tw`
         flex
         relative
-        cursor-pointer
     `}
 `;
 
@@ -69,6 +68,7 @@ const Name = styled.span`
         text-xs
         md: text-sm
         select-none
+        cursor-pointer
     `}
 `;
 
