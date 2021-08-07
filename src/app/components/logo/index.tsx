@@ -2,7 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import CarLogoImg from '../../../assets/images/car-logo.png';
+import CarLogoDarkImg from '../../../assets/images/car-logo-dark.png';
 
+interface ILogoProps {
+    theme?: "light" | "dark";
+}
 const LogoContainer = styled.div`
     ${tw`
         flex
@@ -14,9 +18,9 @@ const LogoText = styled.div`
         text-xl
         md:text-2xl
         font-bold
-        text-black
         m-1
     `};
+    ${({theme}: any) => (theme === 'light'? tw`text-black` : tw`text-white`)}
 `;
 const Image = styled.div`
     width: auto;
@@ -29,11 +33,11 @@ const Image = styled.div`
         height: 100%;
     }
 `;
-export function Logo() {
+export function Logo(props: ILogoProps) {
     return <LogoContainer>
         <Image>
-            <img src={CarLogoImg} />
+            <img src={props.theme === 'dark' ? CarLogoDarkImg : CarLogoImg} />
         </Image>
-        <LogoText>Your Car</LogoText>
+        <LogoText theme={props.theme}>Your Car</LogoText>
     </LogoContainer>
 }
