@@ -19,7 +19,7 @@ export class CarsService {
     public async addCar(data: NewCarInput): Promise<Car>
     {
         const car = this.repository.create(data);
-        this.repository.save(car).catch((err) => {
+        await this.repository.save(car).catch((err) => {
             new InternalServerErrorException();
         })
         console.log("succesfully add a car!");
