@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import { Car } from "../../components/car";
@@ -55,19 +55,20 @@ const CarsContainer = styled.div`
 
 export function TopCars() {
   const dispatch = useDispatch();
-  const fetchTopCars = async () => {
-    const cars = await carService.getCars().catch((err) => {
-      console.log(err);
-    });
-    if(cars)
-    {
-      dispatch(setTopCars(cars));
-    }
-    console.log(cars);
+  const fetchTopCars = () => {
+    carService.getCars()
+      .then((cars) => {
+        if(cars)
+        {
+          dispatch(setTopCars(cars));
+        }
+        console.log(cars);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
-  useEffect(() => {
-    fetchTopCars();
-  }, []);
+  useEffect(fetchTopCars);
   const topCars = useSelector(carSelector);
   const breakPoints = {
     "@0.75": {

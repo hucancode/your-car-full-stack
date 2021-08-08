@@ -1,11 +1,10 @@
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import { faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, {useState} from "react";
+import React from "react";
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import { Logo } from "../logo";
-import { SCREENS } from "../responsive";
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import { faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Container = styled.div`
     background-color: #1d2124;

@@ -1,10 +1,10 @@
-import { faCarAlt, faEllipsisH, faFillDrip, faTachometerAlt } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import { ICar } from "../../model/car";
 import { Button } from "../button";
+import { faEllipsisH, faFillDrip, faTachometerAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Container = styled.div`
     box-shadow: 0 1.3px 17px -2px rgba(0,0,0,0.4);

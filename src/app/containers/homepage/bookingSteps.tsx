@@ -1,9 +1,9 @@
-import { faCalendarAlt } from "@fortawesome/free-regular-svg-icons";
-import { faCarAlt, faMapMarkedAlt } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from 'styled-components';
 import tw from 'twin.macro';
+import { faCalendarAlt } from "@fortawesome/free-regular-svg-icons";
+import { faCarAlt, faMapMarkedAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Container = styled.div`
     ${tw`

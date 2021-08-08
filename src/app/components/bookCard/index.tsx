@@ -2,13 +2,11 @@ import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import tw from "twin.macro";
 import { Button } from "../button";
-import { Marginer } from "../marginer";
 import { faCalendarAlt } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { faCaretDown, faCaretUp } from "@fortawesome/free-solid-svg-icons";
-import { SCREENS } from "../responsive";
 
 const CardContainer = styled.div`
     min-height: 4.5em;

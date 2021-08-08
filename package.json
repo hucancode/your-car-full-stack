@@ -49,7 +49,11 @@
     "schema:generate-watch": "npx apollo codegen:generate --localSchemaFile=./src/app/graphql-schema.json --target=typescript --tagName=gql --watch"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "rules": {
+      "jsx-a11y/anchor-is-valid": "off",
+      "jsx-a11y/alt-text": "off"
+    }
   },
   "browserslist": {
     "production": [
