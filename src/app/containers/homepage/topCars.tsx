@@ -9,6 +9,9 @@ import 'swiper/swiper.scss';
 import 'swiper/components/pagination/pagination.scss';
 import './topCars.css'
 import carService from "../../services/carService";
+import { carSelector, setTopCars } from "./slice";
+import { GetCars_cars } from "../../services/carService/__generated__/GetCars";
+import { useDispatch, useSelector } from "react-redux";
 
 SwiperCore.use([Pagination]);
 
@@ -51,15 +54,60 @@ const CarsContainer = styled.div`
 `;
 
 export function TopCars() {
+  const dispatch = useDispatch();
   const fetchTopCars = async () => {
     const cars = await carService.getCars().catch((err) => {
       console.log(err);
     });
+    if(cars)
+    {
+      dispatch(setTopCars(cars));
+    }
     console.log(cars);
-  }
+  };
   useEffect(() => {
     fetchTopCars();
   }, []);
+  const topCars = useSelector(carSelector);
+  const breakPoints = {
+    "@0.75": {
+      "slidesPerView": 1
+    },
+    "@1.00": {
+      "slidesPerView": 2
+    },
+    "@1.50": {
+      "slidesPerView": 3
+    }
+  };
+  return <Container>
+    <Title>Explore our top deals</Title>
+    <CarsContainer>
+      <Swiper
+        slidesPerView={1}
+        pagination={{ clickable: true }}
+        breakpoints={breakPoints}
+      >
+        {
+          topCars.map((car: GetCars_cars) => ({
+            name: car.name,
+            mileage: car.mileage,
+            thumbnailSrc: car.thumbnailUrl,
+            dailyPrice: car.dailyPrice,
+            monthlyPrice: car.monthlyPrice,
+            gearType: car.gearType,
+            gas: car.gas,
+          }) as ICar)
+          .map((car: ICar) => 
+            <SwiperSlide><Car {...car} /></SwiperSlide>
+          )
+        }
+      </Swiper>
+    </CarsContainer>
+  </Container>
+}
+
+export function TestTopCars() {
   const testCar: ICar = {
     name: "Audi S3",
     mileage: "10k",
@@ -70,7 +118,6 @@ export function TopCars() {
     gearType: "Auto",
     gas: "Petrol",
   };
-
   const testCar2: ICar = {
     name: "Honda City 5",
     mileage: "20k",
@@ -109,8 +156,7 @@ export function TopCars() {
         slidesPerView={1}
         pagination={{ clickable: true }}
         breakpoints={breakPoints}
-      >
-        <SwiperSlide><Car {...testCar} /></SwiperSlide>
+      ><SwiperSlide><Car {...testCar} /></SwiperSlide>
         <SwiperSlide><Car {...testCar2} /></SwiperSlide>
         <SwiperSlide><Car {...testCar3} /></SwiperSlide>
         <SwiperSlide><Car {...testCar} /></SwiperSlide>

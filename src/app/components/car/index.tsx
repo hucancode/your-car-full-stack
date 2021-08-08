@@ -6,9 +6,6 @@ import tw from 'twin.macro';
 import { ICar } from "../../model/car";
 import { Button } from "../button";
 
-interface ICarProps extends ICar {
-}
-
 const Container = styled.div`
     box-shadow: 0 1.3px 17px -2px rgba(0,0,0,0.4);
     width: 20em;
@@ -131,7 +128,7 @@ const RentButton = styled(Button)`
     `}
 `;
 
-export function Car(props: ICarProps) {
+export function Car(props: ICar) {
     const {name, thumbnailSrc, dailyPrice, monthlyPrice, mileage, gearType, gas} = props;
     return <Container>
         <CarThumbnail>
