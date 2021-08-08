@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import { Car } from "../../components/car";
@@ -8,6 +8,7 @@ import SwiperCore, { Pagination } from 'swiper';
 import 'swiper/swiper.scss';
 import 'swiper/components/pagination/pagination.scss';
 import './topCars.css'
+import carService from "../../services/carService";
 
 SwiperCore.use([Pagination]);
 
@@ -50,6 +51,15 @@ const CarsContainer = styled.div`
 `;
 
 export function TopCars() {
+  const fetchTopCars = async () => {
+    const cars = await carService.getCars().catch((err) => {
+      console.log(err);
+    });
+    console.log(cars);
+  }
+  useEffect(() => {
+    fetchTopCars();
+  }, []);
   const testCar: ICar = {
     name: "Audi S3",
     mileage: "10k",
