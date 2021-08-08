@@ -1,0 +1,52 @@
+version: "3.8"
+services: 
+  mysqldb:
+    image: mysql
+    environment: 
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=yourcar
+    ports:
+      - 3306:3306
+    command: --default-authentication-plugin=mysql_native_password
+    networks: 
+      - shared-networks
+    volumes: 
+      - db-config: /etc/mysql
+      - db-data: /var/lib/mysql
+      - ./db/backup/files:/backup_data/data
+  
+  api-prod:
+    container_name: nestjs_api_prod
+    image: nestjs-api-prod:1.0.0
+    build:
+      context: server
+      target: production
+      dockerfile: Dockerfile
+    command: sh -c './bin/wait-for -t 0 mysqldb:3306 -- npm run start:prod'
+    depends_on: 
+      - mysqldb
+    networks:
+      - shared-networks
+    ports: 
+      - 9000:9000
+    restart: unless-stopped
+
+  web-prod:
+    container_name: react_app_prod
+    image: react-app-prod:1.0.0
+    build:
+      context: web
+      target: production
+      dockerfile: Dockerfile
+    command: npm run start:prod
+    port:
+      - 3000:3000
+    networks:
+      - shared-networks
+    restart: unless-stopped
+    
+networks: 
+  shared-networks:
+volumes: 
+  - db-config:
+  - db-data:
