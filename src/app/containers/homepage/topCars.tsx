@@ -96,7 +96,7 @@ export function TopCars() {
         console.log(err);
       });
   };
-  useEffect(fetchTopCars, []);
+  useEffect(fetchTopCars, [dispatch]);
   const topCars = useSelector(carSelector);
   const breakPoints = {
     "@0.75": {
