@@ -15,16 +15,6 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-calendar": "^3.4.2",
-    "@types/react-dom": "^16.9.0",
-    "@types/react-redux": "^7.1.7",
-    "@types/react-responsive": "^8.0.3",
-    "@types/redux-logger": "^3.0.9",
-    "@types/styled-components": "^5.1.11",
-    "@types/swiper": "^5.4.3",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "graphql": "^15.5.1",
@@ -38,9 +28,7 @@
     "react-spinners": "^0.11.0",
     "redux-logger": "^3.0.6",
     "styled-components": "^5.3.0",
-    "swiper": "^6.8.1",
-    "twin.macro": "^2.6.2",
-    "typescript": "~4.1.5"
+    "swiper": "^6.8.1"
   },
   "scripts": {
     "start:prod": "node index.js",
@@ -73,9 +61,19 @@
   "devDependencies": {
     "@types/react": "^16.14.11",
     "@types/react-dom": "^16.9.14",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react-calendar": "^3.4.2",
+    "@types/react-redux": "^7.1.7",
+    "@types/react-responsive": "^8.0.3",
+    "@types/redux-logger": "^3.0.9",
+    "@types/styled-components": "^5.1.11",
+    "@types/swiper": "^5.4.3",
     "autoprefixer": "^9.8.6",
     "postcss": "^7.0.36",
     "sass": "^1.37.5",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.7"
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.7",
+    "twin.macro": "^2.6.2",
+    "typescript": "~4.1.5"
   }
 }
